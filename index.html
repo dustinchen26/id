@@ -236,6 +236,11 @@ nRTCI= (gNBId                 cellLocalId )  nRPCI      padding
             
             // Generate XML outputs
             const cuXml = `
+    <GNBCUFunction>
+      <id>0</id>
+      <gNBId>${gNBId1}</gNBId>
+      <gNBIdLength>${gNBIdLength1}</gNBIdLength>
+	  
 <NRCellCU>
     <id>0</id>
     <cellLocalId>${document.getElementById('cellLocalId1').value}</cellLocalId>
@@ -255,6 +260,9 @@ nRTCI= (gNBId                 cellLocalId )  nRPCI      padding
 `;
             
             const duXml = `
+<gNBId>${gNBId1}</gNBId>
+<gNBIdLength>${gNBIdLength1}</gNBIdLength>
+			   
 <NRCellDU>
     <id>0</id>
     <objectInstance>0</objectInstance>

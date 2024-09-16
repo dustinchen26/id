@@ -1,0 +1,1536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+   <capabilities>
+      <capability>urn:ietf:params:netconf:base:1.0</capability>
+   </capabilities>
+</hello>
+]]>]]>
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+   <edit-config>
+      <target>
+         <running/>
+      </target>
+      <config>
+         <ME xmlns="urn:3gpp:tsg:sa5:nrm:ngran">
+            <objectClass>ME</objectClass>
+            <objectInstance>0</objectInstance>
+            <id>0</id>
+            <vendorName>RSYS</vendorName>
+            <userDefinedState>DRAFT</userDefinedState>
+            <swVersion>3.0.5</swVersion>
+            <dnPrefix>gnb</dnPrefix>
+            <userLabel>ME</userLabel>
+            <locationName>BLE</locationName>
+            <MeasurementControl>
+               <id>0</id>
+               <pMAdministrativeState>Locked</pMAdministrativeState>
+               <defaultFileLocation>/home/maple/du_bin/bin/</defaultFileLocation>
+               <defaultSamplingNumber>10</defaultSamplingNumber>
+               <defaultFileBasedGP>300</defaultFileBasedGP>
+               <defaultFileReportingPeriod>5</defaultFileReportingPeriod>
+               <defaultStreamTarget>127.0.0.1:8080</defaultStreamTarget>
+               <defaultStreamBasedGP>600</defaultStreamBasedGP>
+            </MeasurementControl>
+            <FMControl>
+               <id>0</id>
+               <administrativeState>Unlocked</administrativeState>
+            </FMControl>
+            <AlarmList>
+               <id>0</id>
+            </AlarmList>
+            <GNBDUFunction>
+               <id>0</id>
+               <objectClass>RNCFunction</objectClass>
+               <objectInstance>0</objectInstance>
+               <userLabel>GNBDUFunction</userLabel>
+               <vnfParametersList>
+                  <vnfInstanceId>0</vnfInstanceId>
+                  <vnfdId>1</vnfdId>
+                  <flavourId>1</flavourId>
+                  <autoScalable>false</autoScalable>
+               </vnfParametersList>
+               <peeParametersList>
+                  <siteIdentification>Tech Park</siteIdentification>
+                  <siteLatitude>12.9781</siteLatitude>
+                  <siteLongitude>77.6653</siteLongitude>
+                  <siteDescription>prestige tech park</siteDescription>
+                  <equipmentType>RRU</equipmentType>
+                  <environmentType>Outdoor</environmentType>
+                  <powerInterface>AC</powerInterface>
+               </peeParametersList>
+               <vsDataContainer>
+                  <id>0</id>
+                  <objectClass>vsDataContainer</objectClass>
+                  <objectInstance>0</objectInstance>
+                  <vsDataType>2019-12-31</vsDataType>
+                  <vsDataFormatVersion>gnb_sctp_vs_config.yang</vsDataFormatVersion>
+                  <vsData><![CDATA[
+	      <gnbvs xmlns="urn:rdns:com:radisys:nr:gnb">
+	       <gnbDuCfg>
+            <id>0</id>
+            <numOutboundStreams>1</numOutboundStreams>
+            <maxInboundStreams>1</maxInboundStreams>
+            <maxInitAttempts>5</maxInitAttempts>
+            <heartBeatIntervalInMs>5000</heartBeatIntervalInMs>
+            <maxPathRetx>1</maxPathRetx>
+	       </gnbDuCfg>
+	      </gnbvs>
+         ]]>                  </vsData>
+               </vsDataContainer>
+               <vsDataContainer>
+                  <id>1</id>
+                  <objectClass>vsDataContainer</objectClass>
+                  <objectInstance>1</objectInstance>
+                  <vsDataType>2019-12-31</vsDataType>
+                  <vsDataFormatVersion>gnb_log_vs_config.yang</vsDataFormatVersion>
+                  <vsData><![CDATA[
+	        <gnbvs xmlns="urn:rdns:com:radisys:nr:gnb">
+	         <gnbDuCfg>
+              <id>0</id>
+             <duLog>
+                <moduleId>OAMAG</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>DUMGR</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>DURRM</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>APPUE</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>CODEC</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>EVENT</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>EGTPU</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>DUUDP</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>DUCMN</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>DUMAC</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>SCHL1</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>SCHL2</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>DUCL</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>DUNS</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>FSPKT</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>NRUP</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>F1AP</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>SCTP</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>CL</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>COMMON_UMM</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>SCH</moduleId>
+                <logLevel>TRACE</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>MAC_COMMON</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>MAC_UL</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>MAC_DL</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>RLC_UL</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>RLC_DL</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>RLC_COMMON</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>OAM_AGENT</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>PM</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>FM</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+             <duLog>
+                <moduleId>LIBOAM</moduleId>
+                <logLevel>ERROR</logLevel>
+             </duLog>
+<!--
+             <duLog>
+                <moduleId>RESERVED1</moduleId>
+                <logLevel>ERROR</logLevel>
+              </duLog>
+              <duLog>
+                <moduleId>RESERVED2</moduleId>
+                <logLevel>ERROR</logLevel>
+              </duLog>
+              <duLog>
+                <moduleId>RESERVED3</moduleId>
+                <logLevel>ERROR</logLevel>
+              </duLog>
+-->
+<duLog>
+<moduleId>APP</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>EGTPU_COMMON</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>EGTPU_UPPER_TX_CNTRL</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>EGTPU_UPPER_RX_CNTRL</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>EGTPU_UPPER_TX</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>EGTPU_UPPER_RX</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>EGTPU_LOWER_TX_CNTRL</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>EGTPU_LOWER_RX_CNTRL</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>EGTPU_LOWER_TX</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>EGTPU_LOWER_RX</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>PDCP_COMMON</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>PDCP_TX_CNTRL</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>PDCP_RX_CNTRL</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>PDCP_TX</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>PDCP_RX</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>NRUP_CODEC</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>SDAP_COMMON</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>SDAP_TX_CNTRL</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>SDAP_RX_CNTRL</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>SDAP_TX</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>SDAP_RX</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>SDAP_CODEC</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<duLog>
+<moduleId>EGTPU_TIMER</moduleId>
+<logLevel>ERROR</logLevel>
+</duLog>
+<ngpLog>
+<moduleId>MEM</moduleId>
+<logLevel>ERROR</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>BUF</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>STATS</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>TIMER</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>STHREAD</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>CTHREAD</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>SYS</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>EXCP</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>COMM</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>SCTP</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>UDP</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>TCP</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>MSGQ</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>PRIOQ</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>WORKQ</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<ngpLog>
+<moduleId>PERF</moduleId>
+<logLevel>FATAL</logLevel>
+</ngpLog>
+<logFilePath>./</logFilePath>
+<logFileName>du</logFileName>
+<maxLogFileSize>10000000</maxLogFileSize>
+<maxLogFileCount>5</maxLogFileCount>
+<enableBinLog>false</enableBinLog>
+</gnbDuCfg>
+</gnbvs>
+          ]]>                  </vsData>
+               </vsDataContainer>
+               <vsDataContainer>
+                  <id>2</id>
+                  <objectClass>vsDataContainer</objectClass>
+                  <objectInstance>2</objectInstance>
+                  <vsDataType>2019-12-31</vsDataType>
+                  <vsDataFormatVersion>gnb_du_vs_config.yang</vsDataFormatVersion>
+                  <vsData><![CDATA[
+	    <gnbvs xmlns="urn:rdns:com:radisys:nr:gnb">
+	      <gnbDuCfg>
+          <id>0</id>
+          <platform>
+            <innerSecureLocalIpAddress>192.168.1.1</innerSecureLocalIpAddress>
+          </platform>
+<!--
+          <nsSysCfg>
+             <nsiId>1</nsiId>
+             <coreList>1</coreList>
+             <coreList>2</coreList>
+             <coreList>3</coreList>
+          </nsSysCfg>
+-->
+<maxRlcSduQSize>2000</maxRlcSduQSize>
+<rlcSduQLwrThr>200</rlcSduQLwrThr>
+<rlcSduQUprThr>400</rlcSduQUprThr>
+<nrupFlowCtrlTmrInMS>15</nrupFlowCtrlTmrInMS>
+<enNrupMissingReport>75</enNrupMissingReport>
+<isUlCAEnbld>false</isUlCAEnbld>
+<sliceMgrCfg>
+<nsAgentCfgType>disableNs</nsAgentCfgType>
+<localAddress>192.168.1.104</localAddress>
+<localPort>4343</localPort>
+<remoteAddress>192.168.1.105</remoteAddress>
+<remotePort>4343</remotePort>
+</sliceMgrCfg>
+<gnbF1cVsConfig>
+<F1CAlarm>
+<alarmId>ALARM_F1C_COMM_DOWN</alarmId>
+<alarmName>ALARM_F1C_COMM_DOWN</alarmName>
+<thresholdLevel>0</thresholdLevel>
+<thresholdCount>0</thresholdCount>
+<thresholdTimeInterval>600</thresholdTimeInterval>
+</F1CAlarm>
+</gnbF1cVsConfig>
+<gnbSasVsConfig>
+<sasHandlerEnable>false</sasHandlerEnable>
+<sasRegistrationEnable>true</sasRegistrationEnable>
+<sasGrantTimeout>60</sasGrantTimeout>
+<cbsdRegistrationConfig>
+<userId>Radisys</userId>
+<fccId>Radisys</fccId>
+<cbsdSerialNumber>Radisys</cbsdSerialNumber>
+<callSign>KPPP</callSign>
+<cbsdCategory>A</cbsdCategory>
+<cbsdInfo>
+<model>Model A</model>
+<hardwareVersion>1.0.0</hardwareVersion>
+<firmwareVersion>1.0.0</firmwareVersion>
+</cbsdInfo>
+<airInterface>NR</airInterface>
+<installationParam>
+<height>100</height>
+<heightType>AGL</heightType>
+<indoorDeployment>false</indoorDeployment>
+<antennaAzimuth>0</antennaAzimuth>
+<antennaDowntilt>-90</antennaDowntilt>
+<antennaGain>-127</antennaGain>
+<antennaBeamwidth>0</antennaBeamwidth>
+<eirpCapability>23</eirpCapability>
+<horizontalAccuracy>30</horizontalAccuracy>
+<verticalAccuracy>2</verticalAccuracy>
+<antennaModel>Antenna Model A</antennaModel>
+</installationParam>
+<measCapability>RECEIVED_POWER_WITHOUT_GRANT</measCapability>
+<measCapability>INDOOR_LOSS_USING_GNSS</measCapability>
+<groupingParam>
+<cbsdGroupType>INTERFERENCE_COORDINATION</cbsdGroupType>
+<cbsdGroupId>ID_1</cbsdGroupId>
+</groupingParam>
+</cbsdRegistrationConfig>
+<sasClientGeneralConfig>
+<enablePersistence>true</enablePersistence>
+<persistencePath>./</persistencePath>
+<inquiredSpectrum>
+<lowFrequency>3550000000</lowFrequency>
+<highFrequency>3700000000</highFrequency>
+</inquiredSpectrum>
+<measurementThreshold>-80</measurementThreshold>
+<numOfHbtBeforeGrantRenew>3</numOfHbtBeforeGrantRenew>
+<httpTimeout>60</httpTimeout>
+<maxGrantsPerRequest>6</maxGrantsPerRequest>
+<cbrsTrxRetryTimer>60</cbrsTrxRetryTimer>
+<reassessmentTimer>1800</reassessmentTimer>
+<regPendingRetryTimer>60</regPendingRetryTimer>
+<loggingConfig>
+<enableFileLogging>true</enableFileLogging>
+<logLevel>DEBUG</logLevel>
+<enableConsoleLogging>true</enableConsoleLogging>
+<logDirectory>./</logDirectory>
+<logFilePrefix>du_libsas</logFilePrefix>
+<maxLogFileSizeKb>20480000</maxLogFileSizeKb>
+<maxClosedLogFiles>4</maxClosedLogFiles>
+</loggingConfig>
+</sasClientGeneralConfig>
+<sasServerConfig>
+<sasServerAddress>https://127.0.0.1:9050/</sasServerAddress>
+<certFilePath>/root/Spectrum-Access-System/src/harness/certs/device_a.cert</certFilePath>
+<keyFilePath>/root/Spectrum-Access-System/src/harness/certs/device_a.key</keyFilePath>
+<caChainPath>/root/Spectrum-Access-System/src/harness/certs/ca.cert</caChainPath>
+<crlOcspFilePath>/mnt/flash/crlocspfilepath/</crlOcspFilePath>
+</sasServerConfig>
+</gnbSasVsConfig>
+</gnbDuCfg>
+</gnbvs>
+      ]]>                  </vsData>
+               </vsDataContainer>
+               <gNBDUId>113</gNBDUId>
+               <gNBDUName>gnb01du</gNBDUName>
+               <gNBId>119</gNBId>
+               <gNBIdLength>22</gNBIdLength>
+               <EP_F1C>
+                  <objectClass>EP_F1C</objectClass>
+                  <objectInstance>0</objectInstance>
+                  <id>0</id>
+                  <userLabel>EP_F1C</userLabel>
+                  <farEndEntity>1</farEndEntity>
+                  <localIpAddress>192.168.65.22</localIpAddress>
+                  <localVlanId>007</localVlanId>
+                  <remoteAddress>192.168.65.21</remoteAddress>
+               </EP_F1C>
+               <EP_F1U>
+                  <id>0</id>
+                  <objectClass>EP_F1U</objectClass>
+                  <objectInstance>0</objectInstance>
+                  <userLabel>EP_F1U</userLabel>
+                  <farEndEntity>1</farEndEntity>
+                  <localIpAddress>192.168.65.122</localIpAddress>
+                  <localVlanId>007</localVlanId>
+                  <remoteAddress>192.168.65.121</remoteAddress>
+               </EP_F1U>
+               <EP_E2C>
+                  <!--
+        New E2 interfce has been added to provide support
+        for Near-RT RIC.
+            -->
+                  <id>0</id>
+                  <objectClass>EP_E2C</objectClass>
+                  <objectInstance>0</objectInstance>
+                  <userLabel>EP_E2C</userLabel>
+                  <farEndEntity>1</farEndEntity>
+                  <!--
+        <vsDataContainer>
+         <id></id>
+         <objectClass></objectClass>
+         <objectInstance></objectInstance>
+         <vsDataType></vsDataType>
+         <vsDataFormatVersion></vsDataFormatVersion>
+        </vsDataContainer>
+            -->
+                  <localIpAddress>10.57.6.56</localIpAddress>
+                  <localVlanId>007</localVlanId>
+                  <remoteAddress>10.57.5.95</remoteAddress>
+                  <!-- Neat-RT RIC SCTP Destination Port -->
+                  <port>5000</port>
+                  <isE2FeatureEnabled>false</isE2FeatureEnabled>
+               </EP_E2C>
+               <NRCellDU>
+                  <id>0</id>
+                  <objectClass>RNCFunction</objectClass>
+                  <objectInstance>0</objectInstance>
+                  <userLabel>NRCellDU</userLabel>
+                  <vnfParametersList>
+                     <vnfInstanceId>0</vnfInstanceId>
+                     <vnfdId>1</vnfdId>
+                     <flavourId>1</flavourId>
+                     <autoScalable>false</autoScalable>
+                  </vnfParametersList>
+                  <peeParametersList>
+                     <siteIdentification>Tech Park</siteIdentification>
+                     <siteLatitude>12.9781</siteLatitude>
+                     <siteLongitude>77.6653</siteLongitude>
+                     <siteDescription>prestige tech park</siteDescription>
+                     <equipmentType>RRU</equipmentType>
+                     <environmentType>Outdoor</environmentType>
+                     <powerInterface>AC</powerInterface>
+                  </peeParametersList>
+                  <vsDataContainer>
+                     <id>0</id>
+                     <objectClass>vsDataContainer</objectClass>
+                     <objectInstance>0</objectInstance>
+                     <vsDataType>2019-12-31</vsDataType>
+                     <vsDataFormatVersion>gnb_cell_du_vs_config.yang</vsDataFormatVersion>
+                     <vsData><![CDATA[
+	        <gnbvs xmlns="urn:rdns:com:radisys:nr:gnb">
+	         <gnbDuCfg>
+              <id>0</id>
+              <gnbCellDuVsCfg>
+                 <id>0</id>
+                 <rntiStart>17017</rntiStart>
+                 <maxNumRnti>768</maxNumRnti>
+                 <maxNumUes>32</maxNumUes>
+                 <servedPlmnList>
+                    <servedPlmnIdx>1</servedPlmnIdx>
+                    <servedPlmnId>
+                       <MCC>466</MCC>
+                       <MNC>66</MNC>
+                    </servedPlmnId>
+                    <sliceList>
+                       <sliceIdx>1</sliceIdx>
+                       <sst>2</sst>
+                       <sd>1</sd>
+                    </sliceList>
+                 </servedPlmnList>
+                 <modeType>TDD</modeType>
+                 <nRCGI>
+                    <nrCgipLMNId>
+                       <MCC>466</MCC>
+                       <MNC>66</MNC>
+                    </nrCgipLMNId>
+                    <nrCellId>0001DC002</nrCellId>
+                 </nRCGI>
+                 <nrMu>KHz30</nrMu>
+                 <freqRangeType>FR1_LT_6</freqRangeType>
+                 <nTimingAdvanceOffset>nTimingAdvance_25600</nTimingAdvanceOffset>
+                 <tciInDci>disabled</tciInDci>
+                 <pdcchDmrsScramblingID>19</pdcchDmrsScramblingID>
+                 <pdschDataScramblingID>19</pdschDataScramblingID>
+                 <puschDataScramblingID>19</puschDataScramblingID>
+                 <prbUsageStatsTimer>30</prbUsageStatsTimer>
+                 <featureSetBitMap>4</featureSetBitMap>
+                 <deploymentMode>SA</deploymentMode>
+                 <csiRsCfgInfo>
+                 <isCsiRsEnable>false</isCsiRsEnable>
+                 <nzpCsiRsMinPeriodicity>CSI_RS_RES_PRDCTY_SLOT160</nzpCsiRsMinPeriodicity>
+                 <csiRsRowType>CSI_FREQ_DOM_ALLOC_ROW4</csiRsRowType>
+                 <rowBitmap>1</rowBitmap>
+                 <firstSym>13</firstSym>
+                 <secondSymPres>false</secondSymPres>
+                 <secondSym>12</secondSym>
+                 <cdmType>CSI_RS_CDM_TYPE_FD_CDM2</cdmType>
+                 <csiRsDensity>CSI_RS_DENSITY_ONE</csiRsDensity>
+                 <dot5EvenOdd>CSI_RS_DENSITY_DOT5_EVEN_RB</dot5EvenOdd>
+                 <enWbCsiRs>disabled</enWbCsiRs>
+                 <numCsiRsPerSsb>0</numCsiRsPerSsb>
+                 <powerControlOffset>10</powerControlOffset>
+                 <powerControlOffsetSS>db0</powerControlOffsetSS>
+                 <csiFreqStartCrb>0</csiFreqStartCrb>
+                 <csiFreqNumCrb>64</csiFreqNumCrb>
+                 <aperCsiEnable>false</aperCsiEnable>
+                 <aperCsiScellEnable>false</aperCsiScellEnable>
+                 <csiImElementPattern>
+                 <csiImPatternType>CSI_IM_PATTERN1</csiImPatternType>
+                 <csiImSubcarrierLocation>CSI_IM_SC_LOCATION_S4</csiImSubcarrierLocation>
+                 <csiImSymbolLocation>13</csiImSymbolLocation>
+                 </csiImElementPattern>
+                 </csiRsCfgInfo>
+                 <macCfgCmn>
+                 <maxUlUePerTTI>4</maxUlUePerTTI>
+                 <maxUlUeWithSrbPerTti>4</maxUlUeWithSrbPerTti>
+                 <maxUlUeWithImsPerTti>4</maxUlUeWithImsPerTti>
+                 <maxUlUeWithVoicePerTti>4</maxUlUeWithVoicePerTti>
+                 <maxUlUeWithGbrPerTti>4</maxUlUeWithGbrPerTti>
+                 <maxUlUeWithNonGbrPerTti>4</maxUlUeWithNonGbrPerTti>
+                 <maxDlUePerTTI>4</maxDlUePerTTI>
+                 <maxDlUeWithCePerTti>4</maxDlUeWithCePerTti>
+                 <maxDlUeWithSrbPerTti>4</maxDlUeWithSrbPerTti>
+                 <maxDlUeWithImsPerTti>4</maxDlUeWithImsPerTti>
+                 <maxDlUeWithVoicePerTti>4</maxDlUeWithVoicePerTti>
+                 <maxDlUeWithGbrPerTti>4</maxDlUeWithGbrPerTti>
+                 <maxDlUeWithNonGbrPerTti>4</maxDlUeWithNonGbrPerTti>
+				 <numSsb>1</numSsb>
+                    <rfBeamId>
+                         <beamId>0</beamId>
+                         <beamId>1</beamId>
+                         <beamId>2</beamId>
+                         <beamId>3</beamId>
+                     </rfBeamId>
+                     <rfBeamOffset>0</rfBeamOffset>
+             <ssPbchBurstSetSize>1</ssPbchBurstSetSize>
+				 <tagId>0</tagId>
+				 <taTmrInMs>INFINITY</taTmrInMs>
+             <tUlSyncTime>noTimer</tUlSyncTime>
+             <phrConfig>
+                 <isPhrEnable>true</isPhrEnable>
+                 <phrPeriodicTimer>INFINITY</phrPeriodicTimer>
+                 <phrProhibitPeriodicTimer>SF50</phrProhibitPeriodicTimer>
+                 <phrTxPwrChangeFactor>INFINITY</phrTxPwrChangeFactor>
+                 <phrType2OtherCell>false</phrType2OtherCell>
+                 <phrModeOtherCg>false</phrModeOtherCg>
+              </phrConfig>
+                 <maxUlHqTx>4</maxUlHqTx>
+                 <maxDlHqTx>4</maxDlHqTx>
+                 <maxMsg4HqTx>1</maxMsg4HqTx>
+                 <maxDlVonrTbHqTx>1</maxDlVonrTbHqTx>
+                 <maxUlVonrTbHqTx>1</maxUlVonrTbHqTx>
+                 <preambleStart>47</preambleStart>
+                 <preambleSize>4</preambleSize>
+                 <isBmEnbld>false</isBmEnbld>
+                 <isBfrEnbld>false</isBfrEnbld>
+                 <cyclicPrefixType>NORMAL</cyclicPrefixType>
+                 <dlRank>4</dlRank>
+                 <isPhaseTrackingRefSigEnb>false</isPhaseTrackingRefSigEnb>
+                 <ulRank>2</ulRank>
+                 <dlNumAntPorts>4</dlNumAntPorts>
+		         <ulNumOfAntPorts>2</ulNumOfAntPorts>
+                 <ulModulation>QAM64</ulModulation>
+                 <dlModulation>QAM256</dlModulation>
+                 <dlMcs>14</dlMcs>
+                 <ulMcs>19</ulMcs>
+                 <rarMcs>5</rarMcs>
+                 <bcchMcs>9</bcchMcs>
+                 <pcchMcs>9</pcchMcs>
+                 <dlCcchCqi>8</dlCcchCqi>
+                 <ulCcchCqi>6</ulCcchCqi>
+                 <dlSrbMcs>5</dlSrbMcs>
+                 <ulSrbMcs>5</ulSrbMcs>
+		             <enable_dci1_1And0_1>true</enable_dci1_1And0_1>
+                 <enable_pdsch_in_ssb_slot>true</enable_pdsch_in_ssb_slot>
+                 <dlLaStepup>3</dlLaStepup>
+                 <ulLaStepup>3</ulLaStepup>
+                 <dlLaStepdown>30</dlLaStepdown>
+                 <ulLaStepdown>30</ulLaStepdown>
+                 <vonrDlLaStepup>3</vonrDlLaStepup>
+                 <vonrUlLaStepup>3</vonrUlLaStepup>
+                 <vonrDlLaStepdown>30</vonrDlLaStepdown>
+                 <vonrUlLaStepdown>30</vonrUlLaStepdown>
+                 <cbType1SpN1N2Type>CB_TYPE1_SINGLE_PANEL_RSTRCN_2_1</cbType1SpN1N2Type>
+                 <dlMuMimoConfig>
+                    <isDlMuMimoEnabled>false</isDlMuMimoEnabled>
+                    <minDlMuMimoMcsThreshold>20</minDlMuMimoMcsThreshold>
+                    <minDlMuMimoPRBTheshold>50</minDlMuMimoPRBTheshold>
+                    <dlMuMimoDeltaPRBThreshold>25</dlMuMimoDeltaPRBThreshold>
+                    <maxDlUePerMuMimoPair>2</maxDlUePerMuMimoPair>
+                    <maxDlMuMimoPairPerTti>1</maxDlMuMimoPairPerTti>
+                    <maxLayerPerDlMuMimoPair>4</maxLayerPerDlMuMimoPair>
+                    <maxNumChannelDecomCntPerTti>1</maxNumChannelDecomCntPerTti>
+                    <maxNumChannelDecomRequestPerTask>1</maxNumChannelDecomRequestPerTask>
+                 </dlMuMimoConfig>
+               </macCfgCmn>
+               <cfgCmn>
+                 <numDlSlot>2</numDlSlot>
+                 <numDlSymbol>10</numDlSymbol>
+                 <numUlSlot>2</numUlSlot>
+                 <numUlSymbol>2</numUlSymbol>
+                 <p2Pres>0</p2Pres>
+                 <numDlSlotP2>2</numDlSlotP2>
+                 <numDlSymbolP2>10</numDlSymbolP2>
+                 <numUlSlotP2>2</numUlSlotP2>
+                 <numUlSymbolP2>2</numUlSymbolP2>
+               </cfgCmn>
+               <dlCfgCmn>
+                 <dlBwpCfg>
+                    <bwpId>0</bwpId>
+                    <mu>KHz30</mu>
+                    <cyclicPrefix>extended</cyclicPrefix>
+                    <numRb>273</numRb>
+                    <startRb>0</startRb>
+                    <resourceAllocType>1</resourceAllocType>
+                    <resourceAllocCfg>1</resourceAllocCfg>
+                    <cntrlResourceSetSearchSpaceCfg>
+                       <avgAggregationLvl>2</avgAggregationLvl>
+                       <isCandidatesPerAggrLvlConfigurable>false</isCandidatesPerAggrLvlConfigurable>
+                       <aggrLvl1Candidates>1</aggrLvl1Candidates>
+                       <aggrLvl2Candidates>1</aggrLvl2Candidates>
+                       <aggrLvl4Candidates>2</aggrLvl4Candidates>
+                       <aggrLvl8Candidates>1</aggrLvl8Candidates>
+                       <aggrLvl16Candidates>0</aggrLvl16Candidates>
+                    </cntrlResourceSetSearchSpaceCfg>
+                 </dlBwpCfg>
+                 <dlFreqInfo>
+                    <absFreqPointA>4800720</absFreqPointA>
+                    <absArfcnPointA>720048</absArfcnPointA>
+                    <absFreqSsb>4804320</absFreqSsb>
+                    <absArfcnSsb>720288</absArfcnSsb>
+                    <nrFreqBand>79</nrFreqBand>
+                    <subCarrierCfg>
+                       <offsetToCarrier>0</offsetToCarrier>
+                       <subCarrierSpacing>KHz30</subCarrierSpacing>
+                       <carrierBw>273</carrierBw>
+                    </subCarrierCfg>
+                    <bSChannelBwDL>100MHZ</bSChannelBwDL>
+                    <dlEarfcn>723324</dlEarfcn>
+                 </dlFreqInfo>
+		<numCceRsvdForCmnPdcch>1</numCceRsvdForCmnPdcch>
+             </dlCfgCmn>
+             <ulCfgCmn>
+             <ulTargetCqi>
+                <targetCqi>7</targetCqi>
+             </ulTargetCqi>
+                 <ulBwpCfg>
+                    <bwpId>0</bwpId>
+                    <pucchCmnCfgPres>true</pucchCmnCfgPres>
+                    <puschCmnCfgPres>true</puschCmnCfgPres>
+                    <mu>KHz30</mu>
+                    <cyclicPrefix>extended</cyclicPrefix>
+                    <numRb>273</numRb>
+                    <startRb>0</startRb>
+                    <distributePucchInBwpEdges>0</distributePucchInBwpEdges>
+                    <resourceAllocType>1</resourceAllocType>
+                    <resourceAllocCfg>1</resourceAllocCfg>
+                    <pucchResourceCmn>0</pucchResourceCmn>
+                    <pucchGrpHopping>neither</pucchGrpHopping>
+                    <hoppingId>0</hoppingId>
+                    <p0Nominal>-70</p0Nominal>
+                    <maxCodeRate>zeroDot80</maxCodeRate>
+                    <simultaneousHarqAckCsi>false</simultaneousHarqAckCsi>
+                    <rachCfgInfo>
+                       <rachGenCfg>
+                          <prachCfgIdx>148</prachCfgIdx>
+                          <msg1Fdm>1</msg1Fdm>
+                          <msg1FreqStart>0</msg1FreqStart>
+                          <zeroCorrelationZoneCfg>6</zeroCorrelationZoneCfg>
+                          <preambleRcvdTgtPwr>-76</preambleRcvdTgtPwr>
+                          <preambleTransMax>n10</preambleTransMax>
+                          <pwrRampingStep>dB2</pwrRampingStep>
+                          <rachRspWindow>sl80</rachRspWindow>
+                       </rachGenCfg>
+                       <totalNumOfRachPreamble>64</totalNumOfRachPreamble>
+                       <ssbsPerRach>SSB_ONE</ssbsPerRach>
+                       <cbPreamblePerSsb>8</cbPreamblePerSsb>
+                       <grpBPreambleCfg>
+                          <msg3SizeGrpA>b56</msg3SizeGrpA>
+                          <messagePowerOffsetGroupB>db0</messagePowerOffsetGroupB>
+                          <numOfRachPreambleGrpA>1</numOfRachPreambleGrpA>
+                          <deltaMsg3SizeGroupB>128</deltaMsg3SizeGroupB>
+                       </grpBPreambleCfg>
+                       <contentResolutionTmr>sf40</contentResolutionTmr>
+                       <rsrpThresholdSsb>0</rsrpThresholdSsb>
+                       <rootSeqType>L139Int</rootSeqType>
+                       <rootSeqVal>0</rootSeqVal>
+                       <msg1Scs>KHz30</msg1Scs>
+                       <restrictedSetCfg>RACH_UNREST</restrictedSetCfg>
+                       <maxMsg3Tx>1</maxMsg3Tx>
+                       <preambleFormat>RACH_FORMAT_B4</preambleFormat>
+                       <rachSupportedPerTTI>4</rachSupportedPerTTI>
+                    </rachCfgInfo>
+                    <srPeriodicity>sl10</srPeriodicity>
+                    <f2MaxPayloadLen1>30</f2MaxPayloadLen1>
+                    <f2MaxPayloadLen2>42</f2MaxPayloadLen2>
+                    <f0f2SymLength>1</f0f2SymLength>
+                    <f1SymLength>4</f1SymLength>
+                    <cfgSrWithF1>0</cfgSrWithF1>
+                    <cyclicShift>
+                       <numOfSrCyclicShift>12</numOfSrCyclicShift>
+                       <SrcyclicShiftBitmap>4095</SrcyclicShiftBitmap>
+                       <numOfHarqCyclicShift>12</numOfHarqCyclicShift>
+                       <HarqcyclicShiftBitmap>4095</HarqcyclicShiftBitmap>
+                    </cyclicShift>
+                    <puschTxCfg>codeBook</puschTxCfg>
+                    <srsCfg>
+                       <numSrsSym>1</numSrsSym>
+                       <ktc>2</ktc>
+                       <maxSrsUePerSlot>2</maxSrsUePerSlot>
+                       <alpha>alpha0</alpha>
+                       <resourceType>2</resourceType>
+                       <p0>0</p0>
+                    </srsCfg>
+                    <puschPwrCfg>
+                       <msg3deltaPreamble>0</msg3deltaPreamble>
+                       <p0nominal>-70</p0nominal>
+                       <msg3alpha>ALL</msg3alpha>
+                       <p0>-10</p0>
+                       <alpha>ALL</alpha>
+                       <deltaMcsEnabled>true</deltaMcsEnabled>
+                       <isAccumulated>true</isAccumulated>
+                    </puschPwrCfg>
+                    <pucchPwrCfg>
+                       <p0nominal>-70</p0nominal>
+                       <deltaFpucchF0>0</deltaFpucchF0>
+                       <deltaFpucchF1>0</deltaFpucchF1>
+                       <deltaFpucchF2>0</deltaFpucchF2>
+                       <deltaFpucchF3>0</deltaFpucchF3>
+                       <deltaFpucchF4>0</deltaFpucchF4>
+                       <p0PucchVal>0</p0PucchVal>
+                    </pucchPwrCfg>
+                    <uciOnPusch>
+                       <avoidPuschBasedOnUciType>avoidNone</avoidPuschBasedOnUciType>
+                       <semiStaticBetaOffsetAckIdx1>11</semiStaticBetaOffsetAckIdx1>
+                       <semiStaticBetaOffsetAckIdx2>0</semiStaticBetaOffsetAckIdx2>
+                       <semiStaticBetaOffsetAckIdx3>0</semiStaticBetaOffsetAckIdx3>
+                       <alphaScaling>0</alphaScaling>
+                    </uciOnPusch>
+                    <csiPeriodicity>csiPeriodicity_slots160</csiPeriodicity>
+                 </ulBwpCfg>
+                 <ulFreqInfo>
+                    <absFreqPointA>4800720</absFreqPointA>
+                    <absArfcnPointA>720048</absArfcnPointA>
+                    <nrFreqBand>79</nrFreqBand>
+                    <subCarrierCfg>
+                       <offsetToCarrier>0</offsetToCarrier>
+                       <subCarrierSpacing>KHz30</subCarrierSpacing>
+                       <carrierBw>273</carrierBw>
+                    </subCarrierCfg>
+                    <bSChannelBwUl>100MHZ</bSChannelBwUl>
+                    <freqShft7p5khz>7P5KHZ_DISBL</freqShft7p5khz>
+                    <addtionalSpectrumEmission>0</addtionalSpectrumEmission>
+                    <pMax>33</pMax>
+                    <ulEarfcn>723324</ulEarfcn>
+                 </ulFreqInfo>
+		<addnlUlCoresetEnable>false</addnlUlCoresetEnable>
+             </ulCfgCmn>
+             <!--
+             <supplmntryulCfgCmn>
+                 <maxUePerUlSlot>8</maxUePerUlSlot>
+                 <isHarmonicEnb>false</isHarmonicEnb>
+                 <isSulCfgFreqMute>false</isSulCfgFreqMute>
+                 <ccchCqi>1</ccchCqi>
+                 <sulFreqInfo>
+                    <absFreqPointA>3452460</absFreqPointA>
+                    <absArfcnPointA>630164</absArfcnPointA>
+                    <nrFreqBand>257</nrFreqBand>
+                    <subCarrierCfg>
+                       <offsetToCarrier>0</offsetToCarrier>
+                       <subCarrierSpacing>KHz30</subCarrierSpacing>
+                       <carrierBw>273</carrierBw>
+                    </subCarrierCfg>
+                    <bSChannelBwUl>100MHZ</bSChannelBwUl>
+                    <freqShft7p5khz>7P5KHZ_DISBL</freqShft7p5khz>
+                    <addtionalSpectrumEmission>0</addtionalSpectrumEmission>
+                    <pMax>23</pMax>
+                    <ulEarfcn>2079415</ulEarfcn>
+                 </sulFreqInfo>
+                 <sulTargetCqi>
+                    <targetCqi>15</targetCqi>
+                 </sulTargetCqi>
+                 <sulBwpCfg>
+                    <bwpId>0</bwpId>
+                    <pucchCmnCfgPres>true</pucchCmnCfgPres>
+                    <puschCmnCfgPres>true</puschCmnCfgPres>
+                    <mu>KHz30</mu>
+                    <cyclicPrefix>extended</cyclicPrefix>
+                    <numRb>273</numRb>
+                    <startRb>0</startRb>
+                    <distributePucchInBwpEdges>0</distributePucchInBwpEdges>
+                    <resourceAllocType>1</resourceAllocType>
+                    <resourceAllocCfg>1</resourceAllocCfg>
+                    <pucchResourceCmn>0</pucchResourceCmn>
+                    <pucchGrpHopping>neither</pucchGrpHopping>
+                    <hoppingId>0</hoppingId>
+                    <p0Nominal>0</p0Nominal>
+                    <maxCodeRate>zeroDot80</maxCodeRate>
+                    <simultaneousHarqAckCsi>false</simultaneousHarqAckCsi>
+                    <rachCfgInfo>
+                       <rachGenCfg>
+                          <prachCfgIdx>106</prachCfgIdx>
+                          <msg1Fdm>1</msg1Fdm>
+                          <msg1FreqStart>0</msg1FreqStart>
+                          <zeroCorrelationZoneCfg>6</zeroCorrelationZoneCfg>
+                          <preambleRcvdTgtPwr>-74</preambleRcvdTgtPwr>
+                          <preambleTransMax>n10</preambleTransMax>
+                          <pwrRampingStep>dB0</pwrRampingStep>
+                          <rachRspWindow>sl20</rachRspWindow>
+                       </rachGenCfg>
+                       <totalNumOfRachPreamble>64</totalNumOfRachPreamble>
+                       <ssbsPerRach>SSB_ONE</ssbsPerRach>
+                       <cbPreamblePerSsb>8</cbPreamblePerSsb>
+                       <grpBPreambleCfg>
+                          <msg3SizeGrpA>b56</msg3SizeGrpA>
+                          <messagePowerOffsetGroupB>db0</messagePowerOffsetGroupB>
+                          <numOfRachPreambleGrpA>8</numOfRachPreambleGrpA>
+                          <deltaMsg3SizeGroupB>128</deltaMsg3SizeGroupB>
+                       </grpBPreambleCfg>
+                       <contentResolutionTmr>sf40</contentResolutionTmr>
+                       <rsrpThresholdSsb>0</rsrpThresholdSsb>
+                       <rootSeqType>L839Int</rootSeqType>
+                       <rootSeqVal>0</rootSeqVal>
+                       <msg1Scs>KHz30</msg1Scs>
+                       <restrictedSetCfg>RACH_UNREST</restrictedSetCfg>
+                       <maxMsg3Tx>1</maxMsg3Tx>
+                       <preambleFormat>RACH_FORMAT_B4</preambleFormat>
+                       <rachSupportedPerTTI>4</rachSupportedPerTTI>
+                    </rachCfgInfo>
+                    <srPeriodicity>sl10</srPeriodicity>
+                    <f2MaxPayloadLen1>24</f2MaxPayloadLen1>
+                    <f2MaxPayloadLen2>36</f2MaxPayloadLen2>
+                    <f0f2SymLength>1</f0f2SymLength>
+                    <f1SymLength>4</f1SymLength>
+                    <cfgSrWithF1>0</cfgSrWithF1>
+                    <cyclicShift>
+                       <numOfSrCyclicShift>12</numOfSrCyclicShift>
+                       <SrcyclicShiftBitmap>4095</SrcyclicShiftBitmap>
+                       <numOfHarqCyclicShift>12</numOfHarqCyclicShift>
+                       <HarqcyclicShiftBitmap>4095</HarqcyclicShiftBitmap>
+                    </cyclicShift>
+                    <puschTxCfg>codeBook</puschTxCfg>
+                    <srsCfg>
+                       <numSrsSym>1</numSrsSym>
+                       <ktc>2</ktc>
+                       <maxSrsUePerSlot>1</maxSrsUePerSlot>
+                       <alpha>alpha1</alpha>
+                       <resourceType>2</resourceType>
+                       <p0>0</p0>
+                    </srsCfg>
+                    <puschPwrCfg>
+                       <msg3deltaPreamble>0</msg3deltaPreamble>
+                       <p0nominal>-70</p0nominal>
+                       <msg3alpha>ALL</msg3alpha>
+                       <p0>0</p0>
+                       <alpha>ALL</alpha>
+                       <deltaMcsEnabled>true</deltaMcsEnabled>
+                       <isAccumulated>true</isAccumulated>
+                    </puschPwrCfg>
+                    <pucchPwrCfg>
+                       <p0nominal>-74</p0nominal>
+                       <deltaFpucchF0>0</deltaFpucchF0>
+                       <deltaFpucchF1>0</deltaFpucchF1>
+                       <deltaFpucchF2>0</deltaFpucchF2>
+                       <deltaFpucchF3>0</deltaFpucchF3>
+                       <deltaFpucchF4>0</deltaFpucchF4>
+                       <p0PucchVal>0</p0PucchVal>
+                    </pucchPwrCfg>
+                    <uciOnPusch>
+                       <avoidPuschBasedOnUciType>avoidNone</avoidPuschBasedOnUciType>
+                       <semiStaticBetaOffsetAckIdx1>0</semiStaticBetaOffsetAckIdx1>
+                       <semiStaticBetaOffsetAckIdx2>0</semiStaticBetaOffsetAckIdx2>
+                       <semiStaticBetaOffsetAckIdx3>0</semiStaticBetaOffsetAckIdx3>
+                       <alphaScaling>0</alphaScaling>
+                    </uciOnPusch>
+                    <csiPeriodicity>csiPeriodicity_slots160</csiPeriodicity>
+                 </sulBwpCfg>
+                 </supplmntryulCfgCmn>
+                 -->
+<si-SchedInfo>
+<sib2Periodcity>rf128</sib2Periodcity>
+<sib3Periodicity>rf256</sib3Periodicity>
+<sib4Periodicity>rf64</sib4Periodicity>
+<sib5Periodicity>rf512</sib5Periodicity>
+<sib6Periodicity>rf8</sib6Periodicity>
+<sib7Periodicity>rf32</sib7Periodicity>
+<sib8Periodicity>rf64</sib8Periodicity>
+<sibs>
+<valueTag>2</valueTag>
+<sibType>DU_SIB_TYPE_2</sibType>
+</sibs>
+</si-SchedInfo>
+<l1-CfgInfo>
+<nDlCenterFreq>4849860</nDlCenterFreq>
+<nUlCenterFreq>4849860</nUlCenterFreq>
+<nDlBw>100</nDlBw>
+<nUlBw>100</nUlBw>
+<nDlFftSize>4096</nDlFftSize>
+<nUlFftSize>4096</nUlFftSize>
+<nCarrierAggregationLvl>0</nCarrierAggregationLvl>
+<nMode>XRAN</nMode>
+<nDlCarrierK0>1</nDlCarrierK0>
+<nUlCarrierK0>1</nUlCarrierK0>
+<prachCfg>
+<l1PrachCfgInfoRootSeqIdx>0</l1PrachCfgInfoRootSeqIdx>
+<prachCfgIdx>147</prachCfgIdx>
+<zeroCorrelationZoneCfg>6</zeroCorrelationZoneCfg>
+<highSpeedFlag>false</highSpeedFlag>
+<prachFreqOffset>0</prachFreqOffset>
+<prachSubcSpacing>1</prachSubcSpacing>
+<prachRestrictSet>0</prachRestrictSet>
+<prachFreqStart>0</prachFreqStart>
+<prachSsbRach>one</prachSsbRach>
+</prachCfg>
+<mibParams>
+<cellBarred>notBarred</cellBarred>
+<intraFreqReselection>allowed</intraFreqReselection>
+</mibParams>
+<sib1Params>
+<cellSelectionInfo>
+<qRxLevMin>
+<rsrpLvl>-60</rsrpLvl>
+</qRxLevMin>
+<qRxLevMinSul>
+<rsrpLvl>-50</rsrpLvl>
+</qRxLevMinSul>
+<qQualMin>
+<rsrpLvl>-19</rsrpLvl>
+</qQualMin>
+</cellSelectionInfo>
+<cellAccessInfo>
+<pLMNIdentityList>
+<pLMNIdentityInfoIndex>1</pLMNIdentityInfoIndex>
+<pLMNIdList>
+<pLMNIdIndex>1</pLMNIdIndex>
+<MCC>466</MCC>
+<MNC>66</MNC>
+</pLMNIdList>
+<tacBitMap>1</tacBitMap>
+<ranac>1</ranac>
+<cellId>2</cellId>
+<cellReservedOperatorUse>notReserved</cellReservedOperatorUse>
+</pLMNIdentityList>
+</cellAccessInfo>
+<ConnEstFailureControl>
+<connEstFailCount>n4</connEstFailCount>
+<connEstFailOffsetValidity>s900</connEstFailOffsetValidity>
+<connEstFailOffset>15</connEstFailOffset>
+</ConnEstFailureControl>
+<imsEmergncySupport>false</imsEmergncySupport>
+<eCallOverIMSSupport>false</eCallOverIMSSupport>
+<ueTmr>
+<t300>MS1000</t300>
+<t301>MS1000</t301>
+<t310>MS1000</t310>
+<n310>N1</n310>
+<t311>MS1000</t311>
+<n311>N1</n311>
+<t319>MS1000</t319>
+</ueTmr>
+<useFullResumeId>false</useFullResumeId>
+</sib1Params>
+</l1-CfgInfo>
+<dmrsDlCfg>
+<dmrsTypeDl>type1</dmrsTypeDl>
+<dmrsAdditionalPosDl>pos1</dmrsAdditionalPosDl>
+<maxLenDl>len1</maxLenDl>
+<scramblingID0Dl>19</scramblingID0Dl>
+<scramblingID1Dl>19</scramblingID1Dl>
+</dmrsDlCfg>
+<dmrsUlCfg>
+<dmrsTypeUl>type1</dmrsTypeUl>
+<dmrsAdditionalPosUl>pos1</dmrsAdditionalPosUl>
+<maxLenUl>len1</maxLenUl>
+<transPrecodingDisabledUl>
+<istransPrecodingDisabled>true</istransPrecodingDisabled>
+<scramblingID0>19</scramblingID0>
+<scramblingID1>19</scramblingID1>
+</transPrecodingDisabledUl>
+<transPrecodingEnabledUl>
+<istransPrecodingEnabled>false</istransPrecodingEnabled>
+<nPUSCHId>1</nPUSCHId>
+<seqGrpHopping>disabled</seqGrpHopping>
+<seqHopping>enabled</seqHopping>
+</transPrecodingEnabledUl>
+</dmrsUlCfg>
+<ltenrCoTraficPatternType>
+<isLteNrCoEnable>false</isLteNrCoEnable>
+<cellId>2</cellId>
+<activateSfn>2</activateSfn>
+<isSulFreqMute>false</isSulFreqMute>
+<sharingType>UL_AND_DL_SHARING</sharingType>
+<bitWidthSize>10</bitWidthSize>
+<ulTrafficPattern>830</ulTrafficPattern>
+<dlTrafficPattern>830</dlTrafficPattern>
+<mbSfnControlSym>2</mbSfnControlSym>
+<ltePucchRbInEdge>3</ltePucchRbInEdge>
+</ltenrCoTraficPatternType>
+<!--
+                 <nsCfgInfo>
+                 <nsAddInfo>
+                    <nsiId>2</nsiId>
+                    <resType>NS_RES_ISOLATED</resType>
+                    <nsResId>2</nsResId>
+                    <nsiCellResCfg>
+                       <numDlPrb>11</numDlPrb>
+                       <numUlPrb>11</numUlPrb>
+                    </nsiCellResCfg>
+                    <dlSlaTargetRate>5000000</dlSlaTargetRate>
+                    <ulSlaTargetRate>5000000</ulSlaTargetRate>
+                    <numDlUePerTti>1</numDlUePerTti>
+                    <numUlUePerTti>1</numUlUePerTti>
+                 </nsAddInfo>
+                 <nsModInfo>
+                    <nsiId>3</nsiId>
+                    <resType>NS_RES_ISOLATED</resType>
+                    <nsResId>2</nsResId>
+                    <nsiCellResCfg>
+                       <numDlPrb>11</numDlPrb>
+                       <numUlPrb>11</numUlPrb>
+                    </nsiCellResCfg>
+                    <dlSlaTargetRate>5000000</dlSlaTargetRate>
+                    <ulSlaTargetRate>5000000</ulSlaTargetRate>
+                    <numDlUePerTti>1</numDlUePerTti>
+                    <numUlUePerTti>1</numUlUePerTti>
+                 </nsModInfo>
+                 <nsIdToDel>1</nsIdToDel>
+                 <nsIdToAct>1</nsIdToAct>
+                 <nsIdToDeAct>1</nsIdToDeAct>
+                 <reslAddInfo>
+                    <nsResId>2</nsResId>
+                    <numDlPrb>11</numDlPrb>
+                    <numUlPrb>11</numUlPrb>
+                 </reslAddInfo>
+                 <resourceModInfo>
+                    <nsResId>2</nsResId>
+                    <numDlPrb>11</numDlPrb>
+                    <numUlPrb>11</numUlPrb>
+                 </resourceModInfo>
+                 <reportType>1</reportType>
+                 <period>3</period>
+                 </nsCfgInfo>
+-->
+<pCCHcfgInfo>
+<defaultPagCycle>rf64</defaultPagCycle>
+<numPagFramesInPagCycle>ONE_T</numPagFramesInPagCycle>
+<numPagingOccassionPerPagFrame>one</numPagingOccassionPerPagFrame>
+<monitorType>sCS30KHZoneT</monitorType>
+<numOfPoPerPf>1</numOfPoPerPf>
+<occasionOfPo>1</occasionOfPo>
+</pCCHcfgInfo>
+<DrxInfo>
+<isDrxEnabled>false</isDrxEnabled>
+<isDrxOnDurationTmrType>drx-onDurationTmrMs</isDrxOnDurationTmrType>
+<drxInactivityTmr>MS40</drxInactivityTmr>
+<drxOnDurationTmrInMS>MS1</drxOnDurationTmrInMS>
+<drxRttTmrDl>56</drxRttTmrDl>
+<drxRttTmrUl>56</drxRttTmrUl>
+<drxRetxTmrDl>Slot4</drxRetxTmrDl>
+<drxRetxTmrUl>Slot4</drxRetxTmrUl>
+</DrxInfo>
+<measGap>
+<measGapLength>ms6</measGapLength>
+<measGapRepPeriodicity>ms80</measGapRepPeriodicity>
+<measGapTimingAdvance>ms0</measGapTimingAdvance>
+</measGap>
+<cellAlarm>
+<alarmId>ALARM_CELL_ADMIN_LOCKED</alarmId>
+<alarmName>ALARM_CELL_ADMIN_LOCKED</alarmName>
+<thresholdLevel>0</thresholdLevel>
+<thresholdCount>0</thresholdCount>
+<thresholdTimeInterval>600</thresholdTimeInterval>
+</cellAlarm>
+<cellAlarm>
+<alarmId>ALARM_CELL_SETUP_FAIL</alarmId>
+<alarmName>ALARM_CELL_SETUP_FAIL</alarmName>
+<thresholdLevel>0</thresholdLevel>
+<thresholdCount>0</thresholdCount>
+<thresholdTimeInterval>600</thresholdTimeInterval>
+</cellAlarm>
+<cellAlarm>
+<alarmId>ALARM_CELL_L1_COMM_FAIL</alarmId>
+<alarmName>ALARM_CELL_L1_COMM_FAIL</alarmName>
+<thresholdLevel>0</thresholdLevel>
+<thresholdCount>0</thresholdCount>
+<thresholdTimeInterval>600</thresholdTimeInterval>
+</cellAlarm>
+<cellAlarm>
+<alarmId>ALARM_CELL_L1_ERROR_IND</alarmId>
+<alarmName>ALARM_CELL_L1_ERROR_IND</alarmName>
+<thresholdLevel>0</thresholdLevel>
+<thresholdCount>0</thresholdCount>
+<thresholdTimeInterval>600</thresholdTimeInterval>
+</cellAlarm>
+<cellAlarm>
+<alarmId>ALARM_CELL_TTI_STRETCH</alarmId>
+<alarmName>ALARM_CELL_TTI_STRETCH</alarmName>
+<thresholdLevel>0</thresholdLevel>
+<thresholdCount>0</thresholdCount>
+<thresholdTimeInterval>600</thresholdTimeInterval>
+</cellAlarm>
+<cellAlarm>
+<alarmId>ALARM_CELL_VC_QUEUE_FULL</alarmId>
+<alarmName>ALARM_CELL_VC_QUEUE_FULL</alarmName>
+<thresholdLevel>0</thresholdLevel>
+<thresholdCount>0</thresholdCount>
+<thresholdTimeInterval>600</thresholdTimeInterval>
+</cellAlarm>
+<cellPfsCfgInfo>
+<nr5qiCoeff>5</nr5qiCoeff>
+<gbrServedRateCoeff>5</gbrServedRateCoeff>
+<uePfsCoeff>5</uePfsCoeff>
+<totalSlicePriolvl>10</totalSlicePriolvl>
+<totalUePfsPriolvl>100</totalUePfsPriolvl>
+<totalGbrServedRatePriolvl>100</totalGbrServedRatePriolvl>
+<tptCoEff>5</tptCoEff>
+<fairnessCoeff>5</fairnessCoeff>
+<dlProactiveGrantTmr>noTimer</dlProactiveGrantTmr>
+<ulProactiveGrantTmr>noTimer</ulProactiveGrantTmr>
+<maxVonrPktSize>0</maxVonrPktSize>
+</cellPfsCfgInfo>
+<enableRateMatchSsbPbch>false</enableRateMatchSsbPbch>
+<enablePdschRateMatchCoreset>false</enablePdschRateMatchCoreset>
+<numPucchCellGrp>0</numPucchCellGrp>
+<rlcCfg>
+<dscp_enable>false</dscp_enable>
+<nrQfiGrp>
+<fiveqi>9</fiveqi>
+<snFieldLenUlAm>size18</snFieldLenUlAm>
+<snFieldLenDlAm>size18</snFieldLenDlAm>
+<snFieldLenUlUm>size12</snFieldLenUlUm>
+<snFieldLenDlUm>size12</snFieldLenDlUm>
+<pollRetxTmr>ms400</pollRetxTmr>
+<pollPdu>pdu32</pollPdu>
+<pollByte>infinity</pollByte>
+<maxRetxThreshold>tmr32</maxRetxThreshold>
+<reassemblyTmr>ms40</reassemblyTmr>
+<statusProhibitTmr>ms10</statusProhibitTmr>
+<ulLcPriority>4</ulLcPriority>
+<dscp>120</dscp>
+</nrQfiGrp>
+<nrQfiGrp>
+<fiveqi>5</fiveqi>
+<snFieldLenUlAm>size12</snFieldLenUlAm>
+<snFieldLenDlAm>size12</snFieldLenDlAm>
+<snFieldLenUlUm>size12</snFieldLenUlUm>
+<snFieldLenDlUm>size12</snFieldLenDlUm>
+<pollRetxTmr>ms400</pollRetxTmr>
+<pollPdu>pdu32</pollPdu>
+<pollByte>infinity</pollByte>
+<maxRetxThreshold>tmr8</maxRetxThreshold>
+<reassemblyTmr>ms40</reassemblyTmr>
+<statusProhibitTmr>ms35</statusProhibitTmr>
+<ulLcPriority>4</ulLcPriority>
+<dscp>120</dscp>
+</nrQfiGrp>
+<nrQfiGrp>
+<fiveqi>8</fiveqi>
+<snFieldLenUlAm>size12</snFieldLenUlAm>
+<snFieldLenDlAm>size12</snFieldLenDlAm>
+<snFieldLenUlUm>size12</snFieldLenUlUm>
+<snFieldLenDlUm>size12</snFieldLenDlUm>
+<pollRetxTmr>ms400</pollRetxTmr>
+<pollPdu>pdu32</pollPdu>
+<pollByte>infinity</pollByte>
+<maxRetxThreshold>tmr8</maxRetxThreshold>
+<reassemblyTmr>ms40</reassemblyTmr>
+<statusProhibitTmr>ms35</statusProhibitTmr>
+<ulLcPriority>4</ulLcPriority>
+<dscp>120</dscp>
+</nrQfiGrp>
+<nrQfiGrp>
+<fiveqi>1</fiveqi>
+<snFieldLenUlAm>size12</snFieldLenUlAm>
+<snFieldLenDlAm>size12</snFieldLenDlAm>
+<snFieldLenUlUm>size12</snFieldLenUlUm>
+<snFieldLenDlUm>size12</snFieldLenDlUm>
+<pollRetxTmr>ms400</pollRetxTmr>
+<pollPdu>pdu32</pollPdu>
+<pollByte>infinity</pollByte>
+<maxRetxThreshold>tmr8</maxRetxThreshold>
+<reassemblyTmr>ms40</reassemblyTmr>
+<statusProhibitTmr>ms35</statusProhibitTmr>
+<ulLcPriority>4</ulLcPriority>
+<dscp>120</dscp>
+</nrQfiGrp>
+<nrQfiGrp>
+<fiveqi>3</fiveqi>
+<snFieldLenUlAm>size18</snFieldLenUlAm>
+<snFieldLenDlAm>size18</snFieldLenDlAm>
+<snFieldLenUlUm>size12</snFieldLenUlUm>
+<snFieldLenDlUm>size12</snFieldLenDlUm>
+<pollRetxTmr>ms400</pollRetxTmr>
+<pollPdu>pdu32</pollPdu>
+<pollByte>infinity</pollByte>
+<maxRetxThreshold>tmr8</maxRetxThreshold>
+<reassemblyTmr>ms40</reassemblyTmr>
+<statusProhibitTmr>ms35</statusProhibitTmr>
+<ulLcPriority>4</ulLcPriority>
+<dscp>120</dscp>
+</nrQfiGrp>
+<nrQfiGrp>
+<fiveqi>6</fiveqi>
+<snFieldLenUlAm>size18</snFieldLenUlAm>
+<snFieldLenDlAm>size18</snFieldLenDlAm>
+<snFieldLenUlUm>size12</snFieldLenUlUm>
+<snFieldLenDlUm>size12</snFieldLenDlUm>
+<pollRetxTmr>ms400</pollRetxTmr>
+<pollPdu>pdu32</pollPdu>
+<pollByte>infinity</pollByte>
+<maxRetxThreshold>tmr8</maxRetxThreshold>
+<reassemblyTmr>ms40</reassemblyTmr>
+<statusProhibitTmr>ms35</statusProhibitTmr>
+<ulLcPriority>4</ulLcPriority>
+<dscp>120</dscp>
+</nrQfiGrp>
+<nrQfiGrp>
+<fiveqi>63</fiveqi>
+<snFieldLenUlAm>size18</snFieldLenUlAm>
+<snFieldLenDlAm>size18</snFieldLenDlAm>
+<snFieldLenUlUm>size12</snFieldLenUlUm>
+<snFieldLenDlUm>size12</snFieldLenDlUm>
+<pollRetxTmr>ms400</pollRetxTmr>
+<pollPdu>pdu32</pollPdu>
+<pollByte>infinity</pollByte>
+<maxRetxThreshold>tmr8</maxRetxThreshold>
+<reassemblyTmr>ms40</reassemblyTmr>
+<statusProhibitTmr>ms35</statusProhibitTmr>
+<ulLcPriority>4</ulLcPriority>
+<dscp>120</dscp>
+</nrQfiGrp>
+<eutraQosGrp>
+<qci>1</qci>
+<snFieldLenUlAm>size12</snFieldLenUlAm>
+<snFieldLenDlAm>size12</snFieldLenDlAm>
+<snFieldLenUlUm>size12</snFieldLenUlUm>
+<snFieldLenDlUm>size12</snFieldLenDlUm>
+<pollRetxTmr>ms400</pollRetxTmr>
+<pollPdu>pdu32</pollPdu>
+<pollByte>infinity</pollByte>
+<maxRetxThreshold>tmr8</maxRetxThreshold>
+<reassemblyTmr>ms40</reassemblyTmr>
+<statusProhibitTmr>ms35</statusProhibitTmr>
+<ulLcPriority>4</ulLcPriority>
+<dscp>120</dscp>
+</eutraQosGrp>
+<eutraQosGrp>
+<qci>9</qci>
+<snFieldLenUlAm>size12</snFieldLenUlAm>
+<snFieldLenDlAm>size12</snFieldLenDlAm>
+<snFieldLenUlUm>size12</snFieldLenUlUm>
+<snFieldLenDlUm>size12</snFieldLenDlUm>
+<pollRetxTmr>ms400</pollRetxTmr>
+<pollPdu>pdu32</pollPdu>
+<pollByte>infinity</pollByte>
+<maxRetxThreshold>tmr8</maxRetxThreshold>
+<reassemblyTmr>ms40</reassemblyTmr>
+<statusProhibitTmr>ms35</statusProhibitTmr>
+<ulLcPriority>4</ulLcPriority>
+<dscp>120</dscp>
+</eutraQosGrp>
+</rlcCfg>
+<nSsbPwr>-15</nSsbPwr>
+<TxPwrDbm>130</TxPwrDbm>
+<urllcCfg>
+<isTTIMergingEnabled>false</isTTIMergingEnabled>
+<k1MinVal>16</k1MinVal>
+<k2MinVal>33</k2MinVal>
+<isLowSeMcsTableEnabled>false</isLowSeMcsTableEnabled>
+<slotDuration>0</slotDuration>
+<pdschAggFactor>n1</pdschAggFactor>
+<puschAggFactor>n1</puschAggFactor>
+</urllcCfg>
+<ulCfgGrant>
+<isUlCgType1Enabled>false</isUlCgType1Enabled>
+<maxNrOfULCGUESupported>16</maxNrOfULCGUESupported>
+<maxULCGUEsPerSlot>1</maxULCGUEsPerSlot>
+<maxNrOfULCGConfigPerUE>1</maxNrOfULCGConfigPerUE>
+<ulCGP0PUSCHAlpha>1</ulCGP0PUSCHAlpha>
+<maxUlcgHqTx>1</maxUlcgHqTx>
+<ulCGMcsIndexForLowSeMCS>20</ulCGMcsIndexForLowSeMCS>
+<ulCGMcsIndexFor64QAM>15</ulCGMcsIndexFor64QAM>
+<ulCGMcsIndexFor256QAM>9</ulCGMcsIndexFor256QAM>
+<ulCG5qiCount>1</ulCG5qiCount>
+<ulCG5qiVal>2</ulCG5qiVal>
+</ulCfgGrant>
+<sasChannelRequest>
+<preferredChannelWidthInMhz>20</preferredChannelWidthInMhz>
+<preferredLowFrequencyInHz>3550000000</preferredLowFrequencyInHz>
+<strictCheck>false</strictCheck>
+<channelType>GAA</channelType>
+<desiredEirp>0</desiredEirp>
+<interferenceCheck>false</interferenceCheck>
+</sasChannelRequest>
+</gnbCellDuVsCfg>
+</gnbDuCfg>
+</gnbvs>
+              ]]>                     </vsData>
+                  </vsDataContainer>
+                  <nCI>0001DC002</nCI>
+                  <pLMNId>
+                     <MCC>466</MCC>
+                     <MNC>66</MNC>
+                  </pLMNId>
+                  <s-NSSAI>1</s-NSSAI>
+                  <s-NSSAI>2</s-NSSAI>
+                  <administrativeState>Unlocked</administrativeState>
+                  <nRPCI>19</nRPCI>
+                  <nRTAC>0001</nRTAC>
+                  <arfcnDL>2079415</arfcnDL>
+                  <arfcnUL>2079415</arfcnUL>
+                  <arfcnSUL>2079415</arfcnSUL>
+                  <bSChannelBwDL>1</bSChannelBwDL>
+                  <bSChannelBwUL>1</bSChannelBwUL>
+                  <bSChannelBwSUL>1</bSChannelBwSUL>
+                  <ssbPeriodicity>MS20</ssbPeriodicity>
+               </NRCellDU>
+               <!--
+      <NRSectorCarrier>
+        <id>0</id>
+        <objectClass>NRSectorCarrier</objectClass>
+        <objectInstance>0</objectInstance>
+        <userLabel>NRSectorCarrier</userLabel>
+        <vnfParametersList>
+          <vnfInstanceId></vnfInstanceId>
+          <vnfdId></vnfdId>
+          <flavourId></flavourId>
+          <autoScalable></autoScalable>
+       </vnfParametersList>
+        <peeParametersList>
+           <siteIdentification>Tech Park</siteIdentification>
+           <siteLatitude>12.9781</siteLatitude>
+           <siteLongitude>77.6653</siteLongitude>
+           <siteDescription>prestige tech park</siteDescription>
+           <equipmentType>RRU</equipmentType>
+           <environmentType>Outdoor</environmentType>
+           <powerInterface>AC</powerInterface>
+        </peeParametersList>
+        <vsDataContainer>
+          <id>0</id>
+          <objectClass>vsDataContainer</objectClass>
+          <objectInstance>0</objectInstance>
+          <vsDataType></vsDataType>
+          <vsDataFormatVersion></vsDataFormatVersion>
+        </vsDataContainer>
+        <txDirection>DL and UL</txDirection>
+        <configuredMaxTxPower>1</configuredMaxTxPower>
+        <arfcnDL>2079415</arfcnDL>
+        <arfcnUL>2079415</arfcnUL>
+        <bSChannelBwDL>100MHZ</bSChannelBwDL>
+        <bSChannelBwUL>100MHZ</bSChannelBwUL>
+        <sectorEquipmentFunction>1</sectorEquipmentFunction>
+     </NRSectorCarrier>
+     -->
+               <!-- BWP commented
+      <BWP>
+        <id>0</id>
+        <objectClass>BWP</objectClass>
+        <objectInstance>0</objectInstance>
+        <userLabel>BWP</userLabel>
+        <vnfParametersList>
+          <vnfInstanceId></vnfInstanceId>
+          <vnfdId></vnfdId>
+          <flavourId></flavourId>
+          <autoScalable></autoScalable>
+        </vnfParametersList>
+        <peeParametersList>
+           <siteIdentification>Tech Park</siteIdentification>
+           <siteLatitude>12.9781</siteLatitude>
+           <siteLongitude>77.6653</siteLongitude>
+           <siteDescription>prestige tech park</siteDescription>
+           <equipmentType>RRU</equipmentType>
+           <environmentType>Outdoor</environmentType>
+           <powerInterface>AC</powerInterface>
+        </peeParametersList>
+        <vsDataContainer>
+          <id>0</id>
+          <objectClass>vsDataContainer</objectClass>
+          <objectInstance>0</objectInstance>
+          <vsDataType></vsDataType>
+          <vsDataFormatVersion></vsDataFormatVersion>
+        </vsDataContainer>
+        <bwpContext>DL</bwpContext>
+        <isInitialBwp>INITIAL</isInitialBwp>
+        <subCarrierSpacing>15</subCarrierSpacing>
+        <cyclicPrefix>NORMAL</cyclicPrefix>
+        <startRB>1</startRB>
+        <numberOfRBs>25</numberOfRBs>
+     </BWP>
+     -->
+            </GNBDUFunction>
+         </ME>
+      </config>
+   </edit-config>
+</rpc>
+]]>]]>
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="2">
+   <close-session/>
+</rpc>
+]]>]]>
