@@ -1,0 +1,254 @@
+<!-- 
+  Copyright © [2024] [Dustin_Chen]. All rights reserved.
+  Author: Dustin Chen
+  Email:  Dustin_Chen@compal.com
+-->
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NR_gNBId_CellId_nRPCI_calculator</title>
+    <style>
+
+        body {
+            /* 設置字體 */
+            font-family: 'Roboto', sans-serif;
+
+            /* 設置字體大小 */
+            font-size: 14px;
+        }
+		
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin: 2px 0; /* 縮小上下間距 */
+            line-height: 1; /* 縮小行高 */
+        }
+        .input-group label {
+            margin-right: 5px; /* 縮小標籤和輸入框之間的間距 */
+            white-space: nowrap;
+            font-size: 14px; /* 確保文字大小一致 */
+        }
+        .input-group input {
+            width: 60px;
+            padding: 3px; /* 縮小內邊距 */
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h2>NR_gNBId_CellId_nRPCI_calculator</h2>
+  <style>
+    .author-info {
+      display: inline;
+      margin-right: 10px;
+    }
+  </style>	
+  <p class="author-info">Author: Dustin_Chen</p>
+  <p class="author-info">Email: <a href="mailto:Dustin_Chen@compal.com">Dustin_Chen@compal.com</a></p>
+  <p class="author-info">or <a href="mailto:chuhpsdustin@gmail.com">chuhpsdustin@gmail.com</a></p>
+    
+    <div>
+        <h3>Cell 1</h3>
+        <div class="input-group">
+            <label for="gNBId1">gNBId:</label>
+            <input type="number" id="gNBId1" value="119" min="0" max="4294967295">
+        </div>
+        <div class="input-group">
+            <label for="gNBIdLength1">gNBIdLength(22/24/32):</label>
+            <input type="number" id="gNBIdLength1" value="22" min="22" max="32" step="2">
+        </div>
+        <div class="input-group">
+            <label for="cellLocalId1">CellId(cellLocalId):</label>
+            <input type="number" id="cellLocalId1" value="1" min="0" max="16383">
+        </div>
+        <div class="input-group">
+            <label for="nRPCI1">nRPCI:</label>
+            <input type="number" id="nRPCI1" value="19" min="0" max="1023">
+        </div>
+    </div>
+    
+    <div>
+        <h3>Cell 2</h3>
+        <div class="input-group">
+            <label for="gNBId2">gNBId:</label>
+            <input type="number" id="gNBId2" value="119" min="0" max="4294967295">
+        </div>
+        <div class="input-group">
+            <label for="gNBIdLength2">gNBIdLength(22/24/32):</label>
+            <input type="number" id="gNBIdLength2" value="22" min="22" max="32" step="2">
+        </div>
+        <div class="input-group">
+            <label for="cellLocalId2">CellId(cellLocalId):</label>
+            <input type="number" id="cellLocalId2" value="2" min="0" max="16383">
+        </div>
+        <div class="input-group">
+            <label for="nRPCI2">nRPCI:</label>
+            <input type="number" id="nRPCI2" value="20" min="0" max="1023">
+        </div>
+    </div>
+    
+    <button onclick="calculate()">計算</button>
+    
+    <h2>結果</h2>
+    <div>
+        <h3>計算過程</h3>
+        <pre id="calculationProcess"></pre>
+    </div>
+    <div>
+        <h3>CU_XML</h3>
+        <pre id="cuXml"></pre>
+    </div>
+    <div>
+        <h3>DU_XML</h3>
+        <pre id="duXml"></pre>
+    </div>
+    
+    <script>
+        function toBinaryString(num, bits) {
+            return num.toString(2).padStart(bits, '0');
+        }
+        
+        function toHexString(binary) {
+            return parseInt(binary, 2).toString(16).toUpperCase().padStart(binary.length / 4, '0');
+        }
+        
+        function calculate() {
+            const results = [];
+            
+            // Get values for Cell 1
+            const gNBId1 = parseInt(document.getElementById('gNBId1').value);
+            const gNBIdLength1 = parseInt(document.getElementById('gNBIdLength1').value);
+            const cellLocalId1 = parseInt(document.getElementById('cellLocalId1').value);
+            const nRPCI1 = parseInt(document.getElementById('nRPCI1').value);
+            
+            const cellLocalIdLength1 = 36 - gNBIdLength1;
+            const gNBIdBinary1 = toBinaryString(gNBId1, gNBIdLength1);
+            const cellLocalIdBinary1 = toBinaryString(cellLocalId1, cellLocalIdLength1);
+            const nRPCIBinary1 = toBinaryString(nRPCI1, 10);
+            const paddingBinary1 = '0'.repeat(18);
+            
+            const nrCellIdBinary1 = gNBIdBinary1 + cellLocalIdBinary1;
+            const fullBinary1 = nrCellIdBinary1 + nRPCIBinary1 + paddingBinary1;
+            const nRTCI1 = parseInt(fullBinary1, 2);
+            
+            results.push(`Cell 1 計算過程：
+gNBId (${gNBId1}) 的二進位: ${gNBIdBinary1}
+Cell Local ID (${cellLocalId1}) 的二進位: ${cellLocalIdBinary1}
+合併 nrCellId 的二進位: ${nrCellIdBinary1}
+nRPCI (${nRPCI1}) 的二進位: ${nRPCIBinary1}
+Padding: ${paddingBinary1}
+合併後的二進位: ${fullBinary1}
+nRTCI (十進位): ${nRTCI1}`);
+            
+            // Get values for Cell 2
+            const gNBId2 = parseInt(document.getElementById('gNBId2').value);
+            const gNBIdLength2 = parseInt(document.getElementById('gNBIdLength2').value);
+            const cellLocalId2 = parseInt(document.getElementById('cellLocalId2').value);
+            const nRPCI2 = parseInt(document.getElementById('nRPCI2').value);
+            
+            const cellLocalIdLength2 = 36 - gNBIdLength2;
+            const gNBIdBinary2 = toBinaryString(gNBId2, gNBIdLength2);
+            const cellLocalIdBinary2 = toBinaryString(cellLocalId2, cellLocalIdLength2);
+            const nRPCIBinary2 = toBinaryString(nRPCI2, 10);
+            const paddingBinary2 = '0'.repeat(18);
+            
+            const nrCellIdBinary2 = gNBIdBinary2 + cellLocalIdBinary2;
+            const fullBinary2 = nrCellIdBinary2 + nRPCIBinary2 + paddingBinary2;
+            const nRTCI2 = parseInt(fullBinary2, 2);
+            
+            results.push(`Cell 2 計算過程：
+gNBId (${gNBId2}) 的二進位: ${gNBIdBinary2}
+Cell Local ID (${cellLocalId2}) 的二進位: ${cellLocalIdBinary2}
+合併 nrCellId 的二進位: ${nrCellIdBinary2}
+nRPCI (${nRPCI2}) 的二進位: ${nRPCIBinary2}
+Padding: ${paddingBinary2}
+合併後的二進位: ${fullBinary2}
+nRTCI (十進位): ${nRTCI2}`);
+            
+            // Generate XML outputs
+            const cuXml = `
+<NRCellCU>
+    <id>0</id>
+    <cellLocalId>${document.getElementById('cellLocalId1').value}</cellLocalId>
+    <cellIndex>0</cellIndex>
+    <nRTCI>${nRTCI2}</nRTCI>
+    <adjacentNRCellRef>1</adjacentNRCellRef>
+    <id>0</id>
+</NRCellCU>
+<NRCellCU>
+    <id>1</id>
+    <cellLocalId>${document.getElementById('cellLocalId2').value}</cellLocalId>
+    <cellIndex>1</cellIndex>
+    <nRTCI>${nRTCI1}</nRTCI>
+    <adjacentNRCellRef>0</adjacentNRCellRef>
+    <id>1</id>
+</NRCellCU>
+`;
+            
+            const duXml = `
+<NRCellDU>
+    <id>0</id>
+    <objectInstance>0</objectInstance>
+    <id>0</id>	
+    <nrCellId>${toHexString(gNBIdBinary1 + cellLocalIdBinary1)}</nrCellId>
+    <pdcchDmrsScramblingID>${nRPCI1}</pdcchDmrsScramblingID>
+    <pdschDataScramblingID>${nRPCI1}</pdschDataScramblingID>
+    <puschDataScramblingID>${nRPCI1}</puschDataScramblingID>
+    <cellId>${document.getElementById('cellLocalId1').value}</cellId>
+    <scramblingID0Dl>${nRPCI1}</scramblingID0Dl>
+    <scramblingID1Dl>${nRPCI1}</scramblingID1Dl>
+    <scramblingID0>${nRPCI1}</scramblingID0>
+    <scramblingID1>${nRPCI1}</scramblingID1>
+    <cellId>${document.getElementById('cellLocalId1').value}</cellId>
+    <nCI>${toHexString(gNBIdBinary1 + cellLocalIdBinary1)}</nCI>
+    <nRPCI>${nRPCI1}</nRPCI>
+</NRCellDU>
+<NRCellDU>
+    <id>1</id>
+    <objectInstance>1</objectInstance>
+    <id>1</id>
+    <nrCellId>${toHexString(gNBIdBinary2 + cellLocalIdBinary2)}</nrCellId>
+    <pdcchDmrsScramblingID>${nRPCI2}</pdcchDmrsScramblingID>
+    <pdschDataScramblingID>${nRPCI2}</pdschDataScramblingID>
+    <puschDataScramblingID>${nRPCI2}</puschDataScramblingID>
+    <cellId>${document.getElementById('cellLocalId2').value}</cellId>
+    <scramblingID0Dl>${nRPCI2}</scramblingID0Dl>
+    <scramblingID1Dl>${nRPCI2}</scramblingID1Dl>
+    <scramblingID0>${nRPCI2}</scramblingID0>
+    <scramblingID1>${nRPCI2}</scramblingID1>
+    <cellId>${document.getElementById('cellLocalId2').value}</cellId>
+    <nCI>${toHexString(gNBIdBinary2 + cellLocalIdBinary2)}</nCI>
+    <nRPCI>${nRPCI2}</nRPCI>
+</NRCellDU>
+`;
+            
+            // Display results
+            document.getElementById('calculationProcess').textContent = results.join('\n\n').trim();
+            document.getElementById('cuXml').textContent = cuXml.trim();
+            document.getElementById('duXml').textContent = duXml.trim();
+        }
+    </script>
+</body>
+</html>
