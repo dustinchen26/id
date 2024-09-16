@@ -32,7 +32,7 @@ nRTCI= (gNBId                 cellLocalId )  nRPCI      padding
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NR_gNBId_CellId_nRPCI_nRTCI_calculator</title>
+    <title>(1CU_1DU_2RU) nCI_nRTCI_calculator</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -100,16 +100,16 @@ nRTCI= (gNBId                 cellLocalId )  nRPCI      padding
     </style>
 </head>
 <body>
-    <h2>NR_gNBId_CellId_nRPCI_nRTCI_calculator</h2>
+    <h2>(1CU_1DU_2RU) nCI_nRTCI_calculator</h2>
     <p class="author-info">Author: Dustin_Chen</p>
     <p class="author-info">Email: <a href="mailto:Dustin_Chen@compal.com">Dustin_Chen@compal.com</a></p>
     <p class="author-info">or <a href="mailto:chuhpsdustin@gmail.com">chuhpsdustin@gmail.com</a></p>
 
 <pre>
 【Note】nRTCI = NR target Cell id
-	(nRTCI) = (gNBId) + (CellId)+ (nRPCI) + (padding)
-	(64bits)= (22bits)+ (14bits)+ (10bits)+ (18bits)
-	nrCellId or nCI = (gNBId) + (CellId)
+(nRTCI) = (gNBId) + (CellId) + (nRPCI) + (padding)
+        = (nrCellId/nCI(HEX))+ (nRPCI) + (padding)
+(64bits)= (22bits)+ (14bits)+ (10bits)+ (18bits)
 </pre>
     <div class="container">
         <div class="cell-group">
@@ -123,7 +123,7 @@ nRTCI= (gNBId                 cellLocalId )  nRPCI      padding
                 <input type="number" id="gNBIdLength1" value="22" min="22" max="32" step="2">
             </div>
             <div class="input-group">
-                <label for="cellLocalId1">CellId(cellLocalId):</label>
+                <label for="cellLocalId1">cellLocalId(CellId):</label>
                 <input type="number" id="cellLocalId1" value="1" min="0" max="16383">
             </div>
             <div class="input-group">
@@ -143,7 +143,7 @@ nRTCI= (gNBId                 cellLocalId )  nRPCI      padding
                 <input type="number" id="gNBIdLength2" value="22" min="22" max="32" step="2">
             </div>
             <div class="input-group">
-                <label for="cellLocalId2">CellId(cellLocalId):</label>
+                <label for="cellLocalId2">cellLocalId(CellId):</label>
                 <input type="number" id="cellLocalId2" value="2" min="0" max="16383">
             </div>
             <div class="input-group">
@@ -154,7 +154,7 @@ nRTCI= (gNBId                 cellLocalId )  nRPCI      padding
     </div>
     
     <button onclick="calculate()">Calculate</button>
-    
+
     <div>
         <h3>CU_xml</h3>
         <pre id="cuXml"></pre>
@@ -245,16 +245,24 @@ nRTCI= (gNBId                 cellLocalId )  nRPCI      padding
     <id>0</id>
     <cellLocalId>${document.getElementById('cellLocalId1').value}</cellLocalId>
     <cellIndex>0</cellIndex>
+	
+    <NRCellRelation>
+        <id>0</id>	
     <nRTCI>${nRTCI2}</nRTCI>
     <adjacentNRCellRef>1</adjacentNRCellRef>
+	
     <id>0</id>
 </NRCellCU>
 <NRCellCU>
     <id>1</id>
     <cellLocalId>${document.getElementById('cellLocalId2').value}</cellLocalId>
     <cellIndex>1</cellIndex>
+	
+    <NRCellRelation>
+        <id>1</id>	
     <nRTCI>${nRTCI1}</nRTCI>
     <adjacentNRCellRef>0</adjacentNRCellRef>
+	
     <id>1</id>
 </NRCellCU>
 `;
